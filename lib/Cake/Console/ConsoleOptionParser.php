@@ -2,8 +2,6 @@
 /**
  * ConsoleOptionParser file
  *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -14,7 +12,7 @@
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @since         CakePHP(tm) v 2.0
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('TaskCollection', 'Console');
@@ -301,7 +299,7 @@ class ConsoleOptionParser {
 				'boolean' => false,
 				'choices' => array()
 			);
-			$options = array_merge($defaults, $options);
+			$options += $defaults;
 			$option = new ConsoleInputOption($options);
 		}
 		$this->_options[$name] = $option;
@@ -340,7 +338,7 @@ class ConsoleOptionParser {
 				'required' => false,
 				'choices' => array()
 			);
-			$options = array_merge($defaults, $params);
+			$options = $params + $defaults;
 			$index = $options['index'];
 			unset($options['index']);
 			$arg = new ConsoleInputArgument($options);
@@ -405,7 +403,7 @@ class ConsoleOptionParser {
 				'help' => '',
 				'parser' => null
 			);
-			$options = array_merge($defaults, $options);
+			$options += $defaults;
 			$command = new ConsoleInputSubcommand($options);
 		}
 		$this->_subcommands[$name] = $command;

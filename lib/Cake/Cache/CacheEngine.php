@@ -11,7 +11,7 @@
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Cache
  * @since         CakePHP(tm) v 1.2.0.4933
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 /**
@@ -130,7 +130,7 @@ abstract class CacheEngine {
  * to decide whether actually delete the keys or just simulate it to achieve
  * the same result.
  *
- * @param string $groups name of the group to be cleared
+ * @param string $group name of the group to be cleared
  * @return boolean
  */
 	public function clearGroup($group) {

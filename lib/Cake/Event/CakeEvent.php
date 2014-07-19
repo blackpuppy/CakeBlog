@@ -1,8 +1,5 @@
 <?php
 /**
- *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -14,7 +11,7 @@
  * @link		  http://cakephp.org CakePHP(tm) Project
  * @package		  Cake.Observer
  * @since		  CakePHP(tm) v 2.1
- * @license		  MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 /**
@@ -85,7 +82,7 @@ class CakeEvent {
 /**
  * Dynamically returns the name and subject if accessed directly
  *
- * @param string $attribute
+ * @param string $attribute Attribute name.
  * @return mixed
  */
 	public function __get($attribute) {

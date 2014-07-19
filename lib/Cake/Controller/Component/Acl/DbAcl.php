@@ -11,8 +11,9 @@
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Controller.Component.Acl
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 App::uses('AclInterface', 'Controller/Component/Acl');
 App::uses('Hash', 'Utility');
 App::uses('ClassRegistry', 'Utility');
@@ -52,7 +53,7 @@ class DbAcl extends Object implements AclInterface {
 /**
  * Initializes the containing component and sets the Aro/Aco objects to it.
  *
- * @param AclComponent $component
+ * @param AclComponent $component The AclComponent instance.
  * @return void
  */
 	public function initialize(Component $component) {

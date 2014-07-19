@@ -1,7 +1,5 @@
 <?php
 /**
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -11,7 +9,7 @@
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('BaseAuthenticate', 'Controller/Component/Auth');
@@ -51,7 +49,7 @@ class FormAuthenticate extends BaseAuthenticate {
 		}
 		foreach (array($fields['username'], $fields['password']) as $field) {
 			$value = $request->data($model . '.' . $field);
-			if (empty($value) || !is_string($value)) {
+			if (empty($value) && $value !== '0' || !is_string($value)) {
 				return false;
 			}
 		}
@@ -61,7 +59,7 @@ class FormAuthenticate extends BaseAuthenticate {
 /**
  * Authenticates the identity contained in a request. Will use the `settings.userModel`, and `settings.fields`
  * to find POST data that is used to find a matching record in the `settings.userModel`. Will return false if
- * there is no post data, either username or password is missing, of if the scope conditions have not been met.
+ * there is no post data, either username or password is missing, or if the scope conditions have not been met.
  *
  * @param CakeRequest $request The request that contains login information.
  * @param CakeResponse $response Unused response object.
