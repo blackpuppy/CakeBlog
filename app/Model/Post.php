@@ -11,4 +11,14 @@ class Post extends AppModel {
             'rule' => 'notEmpty'
         )
     );
+
+    public $hasAndBelongsToMany = array(
+    	'Tag' => array(
+    		'className' => 'Tag'
+			,'joinTable' => 'posts_tags'
+			,'foreignKey' => 'post_id'
+			,'associationForeignKey' => 'tag_id'
+			,'unique' => true
+		)
+	);
 }

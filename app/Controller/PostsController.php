@@ -30,6 +30,8 @@ class PostsController extends AppController {
             } else {
                 $this->Session->setFlash('Unable to add your post.');
             }
+        } else {
+            $this->set('tags', $this->Post->Tag->find('list'));
         }
     }
 
@@ -55,6 +57,7 @@ class PostsController extends AppController {
 
         if (!$this->request->data) {
             $this->request->data = $post;
+            $this->set('tags', $this->Post->Tag->find('list'));
         }
     }
 
