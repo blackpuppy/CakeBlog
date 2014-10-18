@@ -3,7 +3,7 @@ vagrantfile-local:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: ''
+        hostname: 'cakeblog'
         memory: '512'
         cpus: '2'
         chosen_provider: virtualbox
