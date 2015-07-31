@@ -17,12 +17,4 @@
 <br>
 <br>
 
-<h2>Cookie Values Set:</h2>
-<dl>
-    <dt>Simple</dt>
-    <dd><?php echo $time; ?></dd>
-    <dt>Complex.Location</dt>
-    <dd><?php echo $complex['location']; ?></dd>
-    <dt>Complex.Updated</dt>
-    <dd><?php echo $complex['updated']; ?></dd>
-</dl>
+<?php echo $this->element('show_cookie'); ?>

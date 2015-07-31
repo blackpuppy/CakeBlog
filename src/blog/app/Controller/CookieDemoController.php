@@ -19,20 +19,7 @@ class CookieDemoController extends AppController {
 	}
 
 	public function index() {
-		$msg = PHP_EOL . 'CookieDemoController::index():'
-			. PHP_EOL . '  $this->request->url = ' . $this->request->url;
-
-		$cookie = $this->Cookie->read();
-		$time = $this->Cookie->read('simple_cookie');
-		$complex = $this->Cookie->read('complex_cookie');
-
-		$msg .= PHP_EOL . '  $time = ' . $time
-			. PHP_EOL . '  $complex = ' . Debugger::exportVar($complex);
-
-		$this->set(compact('cookie', 'time', 'complex'));
-
-		$msg .= PHP_EOL . str_repeat('-', 80);
-		CakeLog::write(LOG_DEBUG, $msg);
+		$this->_read_cookie();
 	}
 
 	public function set_cookie() {
@@ -42,10 +29,7 @@ class CookieDemoController extends AppController {
 			'updated' => $time
 		);
 
-		$this->Cookie->write('simple_cookie', $time);
-		$this->Cookie->write('complex_cookie', $complex);
-
-		$this->set(compact('time', 'complex'));
+		$this->_read_cookie();
 	}
 
 	public function set_cookie_ajax() {
@@ -63,12 +47,21 @@ class CookieDemoController extends AppController {
 	}
 
 	public function read_cookie() {
-		$msg = PHP_EOL . 'CookieDemoController::read_cookie():'
+		$this->_read_cookie();
+	}
+
+	private function _read_cookie() {
+		$msg = PHP_EOL . 'CookieDemoController::_read_cookie():'
 			. PHP_EOL . '  $this->request->url = ' . $this->request->url;
 
 		$cookie = $this->Cookie->read();
-		$time = $this->Cookie->read('simple_cookie');
-		$complex = $this->Cookie->read('complex_cookie');
+		if (!empty($cookie)) {
+			$time = $this->Cookie->read('simple_cookie');
+			$complex = $this->Cookie->read('complex_cookie');
+		} else {
+			$time = '';
+			$complex = '';
+		}
 
 		$msg .= PHP_EOL . '  $time = ' . $time
 			. PHP_EOL . '  $complex = ' . Debugger::exportVar($complex);
