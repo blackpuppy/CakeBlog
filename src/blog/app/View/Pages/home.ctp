@@ -32,6 +32,10 @@ App::uses('Debugger', 'Utility');
 		'controller' => 'tags'
 		,'action' => 'index'
 	)); ?></li>
+	<li><?php echo $this->Html->link('Cookie Demo', array(
+		'controller' => 'cookie_demo'
+		,'action' => 'index'
+	)); ?></li>
 </ul>
 
 <h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
