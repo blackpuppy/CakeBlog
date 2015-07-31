@@ -7,6 +7,8 @@
     array('controller' => 'cookie_demo', 'action' => 'index')
 ); ?>
 <br>
+<?php echo $this->element('set_cookie_ajax'); ?>
+<br>
 <?php echo $this->Html->link(
     'Read Cookie',
     array('controller' => 'cookie_demo', 'action' => 'read_cookie')
@@ -19,8 +21,8 @@
 <dl>
     <dt>Simple</dt>
     <dd><?php echo $time; ?></dd>
-    <dt>complex.location</dt>
+    <dt>Complex.Location</dt>
     <dd><?php echo $complex['location']; ?></dd>
-    <dt>complex.updated</dt>
+    <dt>Complex.Updated</dt>
     <dd><?php echo $complex['updated']; ?></dd>
 </dl>

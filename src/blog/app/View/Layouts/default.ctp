@@ -57,6 +57,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //echo $this->element('sql_dump'); ?>
+
+	<?php
+		echo $this->Html->script('http://code.jquery.com/jquery-2.1.4.min.js');
+	?>
+
+	<?php echo $this->fetch('scriptBottom'); ?>
 </body>
 </html>
