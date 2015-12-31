@@ -8,6 +8,8 @@
 /build
 /dist
 /tags
+/app/Plugin/DebugKit
+/app/Vendor
 
 # OS generated files #
 ######################
