@@ -1,6 +1,6 @@
 <?php
 
-App::uses('Controller', 'Controller');
+App::uses('AppController', 'Controller');
 
 class TagsController extends AppController {
     public $helpers = array('Html', 'Form', 'Session');

@@ -1,6 +1,6 @@
 <?php
 
-App::uses('Controller', 'Controller');
+App::uses('AppController', 'Controller');
 
 class CookieDemoController extends AppController {
 	public $uses = false;  // not to use any model
