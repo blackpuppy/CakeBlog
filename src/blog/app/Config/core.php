@@ -269,7 +269,7 @@
  * Uncomment this line and correct your server timezone to fix
  * any date & time related errors.
  */
-	//date_default_timezone_set('UTC');
+	date_default_timezone_set('Asia/Shanghai');
 
 /**
  * `Config.timezone` is available in which you can set users' timezone string.
@@ -277,7 +277,7 @@
  * then the value of `Config.timezone` will be used. This feature allows you to set users' timezone just
  * once instead of passing it each time in function calls.
  */
-	//Configure::write('Config.timezone', 'Europe/Paris');
+	Configure::write('Config.timezone', 'Asia/Shanghai');
 
 /**
  * Cache Engine Configuration
@@ -361,7 +361,7 @@ if (Configure::read('debug') > 0) {
 }
 
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
-$prefix = 'myapp_';
+$prefix = 'cakeblog_';
 
 /**
  * Configure the cache used for general framework caching. Path information,
