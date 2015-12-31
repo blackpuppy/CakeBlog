@@ -6,12 +6,13 @@ class PostsController extends AppController {
 	public $helpers = array('Html', 'Form', 'Session');
 	// public $cacheAction = '1 hour';
 	public $cacheAction = array(
-		'index' => 3000,
-		'view' => 3000
+		'index' => '1 hour',
+		'view' => '1 hour'
 	);
 
 	public function index() {
 		$this->set('posts', $this->Post->find('all'));
+		$this->set('title_for_layout', 'Posts');
 	}
 
 	public function view($id = null) {
@@ -24,6 +25,7 @@ class PostsController extends AppController {
 			throw new NotFoundException(__('Invalid post'));
 		}
 		$this->set('post', $post);
+		$this->set('title_for_layout', 'View Post ' . $id);
 	}
 
 	public function add() {
@@ -35,8 +37,10 @@ class PostsController extends AppController {
 			} else {
 				$this->Session->setFlash('Unable to add your post.');
 			}
+			$this->set('title_for_layout', 'Create Post');
 		} else {
 			$this->set('tags', $this->Post->Tag->find('list'));
+			$this->set('title_for_layout', 'New Post');
 		}
 	}
 
@@ -64,6 +68,7 @@ class PostsController extends AppController {
 			$this->request->data = $post;
 			$this->set('tags', $this->Post->Tag->find('list'));
 		}
+		$this->set('title_for_layout', 'Edit Post');
 	}
 
 	public function delete($id) {
