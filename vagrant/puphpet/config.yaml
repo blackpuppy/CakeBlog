@@ -34,7 +34,7 @@ vagrantfile-local:
         synced_folder:
             rX0gzZBA56ts:
                 source: ../
-                target: /var/www
+                target: /home/vagrant/cakeblog
                 sync_type: default
                 rsync:
                     args:
@@ -64,6 +64,7 @@ server:
     packages:
         - vim
         - htop
+        - tmux
 firewall:
     install: '1'
     rules: null
@@ -79,11 +80,11 @@ apache:
     modules:
         - rewrite
     vhosts:
-        VMIM5XmLSpcL:
+        cakeblog:
             servername: cakeblog.local
             serveraliases:
                 - www.cakeblog.local
-            docroot: /var/www/src/blog
+            docroot: /home/vagrant/cakeblog/src/blog/app/webroot
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -194,7 +195,7 @@ mysql:
             host: localhost
             user: cakeblog
             password: 'I*$o$&(y'
-            sql_file: /var/www/database/backup/2014-07-21_cake_php_blog.sql
+            sql_file: /home/vagrant/cakeblog/database/backup/2014-07-21_cake_php_blog.sql
 postgresql:
     install: '0'
     settings:
