@@ -14,7 +14,7 @@ Some features to show:
 - ReportManager
 - how to use vagrant to setup an development environment
 - how to use cookie: set in one page, and read from another
-- how to use CakeHelper?
+- how to use CakeHelper?  My CakeHelper demo is not successful.
 
 Reference
 - [Cookbook 2.x > Tutorials & Examples](http://book.cakephp.org/2.0/en/tutorials-and-examples.html)
@@ -22,3 +22,4 @@ Reference
 - [Extending CakePHP’s CacheHelper to use Cache Engines](http://blog.datumbox.com/extending-cakephps-cachehelper-to-use-cache-engines/)
 - [CakePHP UrlCache plugin](https://github.com/dereuromark/cakephp-url-cache) from CakePHP core team member, seems to be a better option than CacheHelper.
 - [What REALLY speeds up your cakephp app](http://www.dereuromark.de/2012/02/13/what-really-speeds-up-your-cakephp-app/)
+- [https://github.com/cakephp/cakephp/issues/1820](https://github.com/cakephp/cakephp/issues/1820)
