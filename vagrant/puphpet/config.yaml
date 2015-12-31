@@ -61,7 +61,9 @@ vagrantfile-local:
         host: detect
 server:
     install: '1'
-    packages: {  }
+    packages:
+        - vim
+        - htop
 firewall:
     install: '1'
     rules: null
