@@ -29,6 +29,9 @@ class CookieDemoController extends AppController {
 			'updated' => $time
 		);
 
+		$this->Cookie->write('simple_cookie', $time);
+		$this->Cookie->write('complex_cookie', $complex);
+
 		$this->_read_cookie();
 	}
 
