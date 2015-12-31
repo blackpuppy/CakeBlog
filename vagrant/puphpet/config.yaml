@@ -78,9 +78,9 @@ apache:
         - rewrite
     vhosts:
         VMIM5XmLSpcL:
-            servername: cakeblog.dev
+            servername: cakeblog.local
             serveraliases:
-                - www.cakeblog.dev
+                - www.cakeblog.local
             docroot: /var/www/src/blog
             port: '80'
             setenv:
